@@ -92,6 +92,7 @@ var correctAnswer = "b3";
 if(buttonClicked=="b3"){
     console.log("correct");
     displaydiv.textContent= "Correct";
+   
     //buttonContainer.element.disabled = true;
    //var disableButton= document.querySelectorAll('.answerButton');
    //disableButton.setAttribute("style","disabled:true");
@@ -102,7 +103,10 @@ else{
     displaydiv.textContent="wrong";
    // element.disabled = true;
 }
-
+btnEl1.disabled=true;
+btnEl2.disabled=true;
+btnEl3.disabled=true;
+btnEl4.disabled=true;
 }
 });
 }
