@@ -8,8 +8,7 @@ function clearFormFunction(){
 document.getElementById("codequiz-form").innerHTML = "";
 
 }
-
-
+var score = 0;
 var body = document.body; 
 var container = document.createElement("div");
 var h1El = document.createElement("h1");
@@ -26,22 +25,23 @@ function startCodeQuiz(event){
     
     console.log("i am inside startcodequiz function");
     codeQuestionAnswers();
-    verifyAnswer();
+  // verifyAnswer();
+  //container.innerHTML="";
 }
+
+var displaydiv = document.createElement("div");
 /* step 4:write a fucntion to dynamically create a para for questions and 
 4 button choices for answer */
 
 function codeQuestionAnswers(){
 console.log("i am inside codequestion function");   
-
+//First question and answers
 //assign values to the newly created elements
-h1El.textContent="question1";
-pEl.textContent="commonly used datatypes do not include _______."
-btnEl1.textContent="String";
-btnEl2.textContent="Numbers";
-btnEl3.textContent="undefined";
-btnEl4.textContent="boolean";
-//setting id for buttons
+
+
+//create new elements dynamically
+
+//setting id attribute for buttons
 btnEl1.id="b1";
 btnEl2.id="b2";
 btnEl3.id="b3";
@@ -62,9 +62,8 @@ container.appendChild(btnEl3);
 container.appendChild(btnEl4);
 container.appendChild(displaydiv);
 
-
 //set attributes to the dynamically created elements
-//outerdivEl.setAttribute("style", "display: flex;justify-content: center");
+
 container.setAttribute("style","width:50%; display:center");
 btnEl1.setAttribute("style","color: white;font-size: 20px; background-color: blue; padding:5px;display:flex-block;margin-left:35px;justify-content:center;align-items:right");
 btnEl2.setAttribute("style","color: white;font-size: 20px; background-color: blue; padding:5px; margin-left:35px;display: block");
@@ -72,7 +71,65 @@ btnEl3.setAttribute("style","color: white;font-size: 20px; background-color: blu
 btnEl4.setAttribute("style","color: white;font-size: 20px; background-color: blue; padding:5px; margin-left:35px;display: block");
 displaydiv.setAttribute("style","font-size:20px; font-family: arial; font-weight: bold");
 
+
+
+
+h1El.textContent="question1";
+pEl.textContent="commonly used datatypes do not include _______."
+btnEl1.textContent="String";
+btnEl2.textContent="Numbers";
+btnEl3.textContent="undefined";
+btnEl4.textContent="boolean";
+verifyAnswer();
+
+
+/*
+//second question and answer
+//assign values to the newly created elements
+h1El.textContent="question2";
+pEl.textContent="Arrays in Javascript can be used to store ______."
+btnEl1.textContent="Methods";
+btnEl2.textContent="objects";
+btnEl3.textContent="Numbers and String";
+btnEl4.textContent="All of the above";
+verifyAnswer();
+//clearFormFunction();
+
+//Third question and answer
+//assign values to the newly created elements
+h1El.textContent="question3";
+pEl.textContent="A very useful tool used for developing and debugging by printing content to the debugger is ________."
+btnEl1.textContent="Javascript";
+btnEl2.textContent="Terminal";
+btnEl3.textContent="Console log";
+btnEl4.textContent="All of the above";
+verifyAnswer();
+//clearFormFunction();
+
+//fourth question and answer
+//assign values to the newly created elements
+h1El.textContent="question4";
+pEl.textContent="String values must be enclosed within _______ when they are being assigned to varibales."
+btnEl1.textContent="commas";
+btnEl2.textContent="curly braces";
+btnEl3.textContent="quotes";
+btnEl4.textContent="Paranthesis";
+verifyAnswer();
+//clearFormFunction();
+
+//fifth question and answer
+//assign values to the newly created elements
+h1El.textContent="question5";
+pEl.textContent="The condition in a if/else statement is enclosed within ________."
+btnEl1.textContent="commas";
+btnEl2.textContent="curly braces";
+btnEl3.textContent="Paranthesis";
+btnEl4.textContent="quotes";
+verifyAnswer();
+*/
+
 }
+
 //step2: using addeventlistener to listen to the submit button
 btnStartQuiz.addEventListener("click",startCodeQuiz);
 
@@ -88,25 +145,27 @@ if(element.matches("button")){
 
 var buttonClicked= element.getAttribute("id");
 console.log(buttonClicked);
+
 var correctAnswer = "b3";
 if(buttonClicked=="b3"){
     console.log("correct");
     displaydiv.textContent= "Correct";
-   
-    //buttonContainer.element.disabled = true;
-   //var disableButton= document.querySelectorAll('.answerButton');
-   //disableButton.setAttribute("style","disabled:true");
-   //container.setAttribute.disabled = true;
+    var score = 0;
+   score = score + 5;
+   console.log("The current score is  : " + score);
 }
 else{
     console.log("wrong");
     displaydiv.textContent="wrong";
-   // element.disabled = true;
+   
 }
+
 btnEl1.disabled=true;
 btnEl2.disabled=true;
 btnEl3.disabled=true;
 btnEl4.disabled=true;
+
 }
 });
+//container.innerHTML="";
 }
