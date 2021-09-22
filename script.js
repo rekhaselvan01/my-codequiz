@@ -7,7 +7,7 @@ var i = 0;
 var globalScore = 0;
 const initialCount = 0;
 var questionNumber=1;
-
+var buttonContainer = document.querySelector(".buttonContainer");
 
 var questionArray = [
     {
@@ -36,7 +36,7 @@ var questionArray = [
         QuestionNo: "Question4",
         question: "String values must be enclosed within _______ when they are being assigned to varibales.",
         answers: ["commas", "curly braces", "quotes", "paranthesis"],
-        correctAnswer: "b4"
+        correctAnswer: "b3"
     },
     {
         order: 5,
@@ -142,6 +142,7 @@ if(count<questionArray.length){
     btnEl4.textContent = questionArray[count].answers[3];
 } else {
     displayDiv.textContent = "The score is : " + globalScore;
+    Redirect(globalScore);
 }
 
 
@@ -156,3 +157,40 @@ function loopyloop(){
 
 startQuizButton.addEventListener("click", loopyloop);
 
+
+function Redirect(hscore) {
+    var nextForm = "./highscore.html?highscore=" +  hscore;
+    window.location.assign(nextForm);
+   
+    
+ }
+
+/*
+function getUserName(){
+    //document.querySelector(".buttonContainer").innerHTML = "";
+    //document.querySelector(".container").innerHTML = "";
+    console.log("in get user name");
+    //var getUserContainer = document.querySelector(".buttonContainer");
+    while(buttonContainer.hasChildNodes())
+    {
+        buttonContainer.removeChild(buttonContainer.lastChild);
+    }
+    var formEl= document.createElement("form");
+    var newh1El=document.createElement("h1");
+    var inputEl=document.querySelector("input");
+    var labelEl = document.createElement("label");
+    var submitEl = document.createElement("button");
+
+    body.appendChild(formEl);
+    formEl.appendChild(inputEl);
+    formEl.appendChild(labelEl);
+    formEl.appendChild(submitEl);
+
+    label.innerHTML = "Enter Your name";
+    inputEl.setAttribute("type", "text");
+    inputEl.setAttribute("value","");
+    inputEl.setAttribute("name","userName");
+    newh1El.textContent= "Your Score is : " + globalScore;
+    var userName= inputEl.value  
+}
+*/

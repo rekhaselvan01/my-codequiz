@@ -22,6 +22,8 @@ Third version: areas of improvement:
 very happy with fourth version where i removed most of old code and got questions to display,choosing options and even able to display scores.
 
 final version: have to create highscore .html and display scores
+The whole functionality has been established. Was able to display all 5 questions, was able to keep track of score using javascript was able to pass highscore to highscore.html using script and able to display score in highscore.html
 
+missing bits: was not able to use a form in the end of 5 question to get username: was not familiar with node concept to implement. hence used prompt to get username and display in highscore.html.
 
 

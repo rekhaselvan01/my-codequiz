@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HighScore</title>
+  <link rel="stylesheet" href="./highscore.css" />
+</head>
+
+<body>
+    <div class="container">
+       
+            <h1>HighScores</h1>
+           
+            
+
+ 
+    </div>
+
+<script>
+    var url_string = window.location.href; //window.location.href
+    var url = new URL(url_string);
+    var user= prompt("enter username:","");
+    var c = url.searchParams.get("highscore");
+    document.write(user + ", your high score is " + c);
+    //document.getElementById("score").value = "Your high score is " + c;
+</script>
+</body>
+</html>
