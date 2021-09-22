@@ -19,5 +19,9 @@ Third version: areas of improvement:
 1.disable buttons after user chooses one option.
 2. follow same logic for next four pages and also calculate total scores.
 
+very happy with fourth version where i removed most of old code and got questions to display,choosing options and even able to display scores.
+
+final version: have to create highscore .html and display scores
+
 
 
